@@ -2,14 +2,14 @@
 
 Table of Content:
 01/ Variables
-02/ predefin
-03/ header
-04/ profile
+02/ predefine
+03/ header + spinner
+04/ about
 05/ button
 06/ skill 
 07/ portfolio 
 08/ blog
-09/ footer 
+09/ footer + back to top + animation vibrate
 =====================================================================*/
 @import url("https://fonts.googleapis.com/css?family=Bree+Serif|Raleway:100,200,300,400,500,600,700,800,900|Yellowtail");
 .col-md-offset-right-1 {
@@ -79,6 +79,15 @@ body, p, h1, h2, h3, h4, h5, h6 {
   padding-top: 10px;
 }
 
+.misc-border {
+  border: 1px solid transparent;
+
+}
+
+.misc-border:hover {
+  border: 1px solid #000;
+}
+
 /* Main title css
 ============================================================================================ */
 .main_title {
@@ -101,6 +110,8 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* End Main title css
+============================================================================================ */
+/* Spinner css
 ============================================================================================ */
 #preloader {
   position: fixed;
@@ -198,12 +209,14 @@ body, p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* End Spinner Area css
+============================================================================================ */
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /* Header Menu Area css
 ============================================================================================ */
 .header_area {
-  background: #fec608;
+  background: #fec608c9;
 }
 
 .header_area .navbar.navbar-default {
@@ -218,6 +231,39 @@ body, p, h1, h2, h3, h4, h5, h6 {
   display: block;
   vertical-align: middle;
   line-height: 76px;
+}
+
+.header_area .navbar.navbar-default .navbar-header .icon-bar {
+    width: 20px!important;
+    display: block;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #888;
+    margin: 0px 0;
+    float: right;
+  transition: linear 0.4s;
+}
+
+.header_area .navbar.navbar-default .navbar-header .icon-bar1 {
+    width: 30px!important;
+    display: block;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #888;
+    margin: 7px 0 4px;
+  transition: linear 0.4s;
+}
+
+
+.header_area .navbar.navbar-default .navbar-header .icon-bar2 {
+    width: 12px!important;
+    display: block;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #888;
+    margin: 0px 0;
+    float: right;
+  transition: linear 0.4s;
 }
 
 .header_area .navbar.navbar-default .navbar-header .navbar-brand img {
@@ -240,6 +286,10 @@ body, p, h1, h2, h3, h4, h5, h6 {
   color: #222222;
   display: inline-block;
   transition: all 400ms linear 0s;
+}
+
+.header_area .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #ffcf5a;
 }
 
 .header_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li:hover a, .header_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li.active a {
@@ -350,6 +400,11 @@ body, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.about_person_area .person_details .person_information ul li:nth-child(1):hover {
+  font-size: 23px;
+
+}
+
 .social_icon li {
   display: inline-block;
   margin-right: 20px;
@@ -373,7 +428,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
   margin-left: -60px;
 }
 
-.social_icon li .tooltiptext::after {
+.social_icon li .tooltip-text::after {
   content: " ";
   position: absolute;
   top: 100%; /* At the bottom of the tooltip */
@@ -384,7 +439,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
   border-color: #fbcb09 transparent transparent transparent;
 }
 
-.social_icon li:hover .tooltiptext {
+.social_icon li:hover .tooltip-text {
   visibility: visible;
 }
 
@@ -600,6 +655,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /*----------------------------------------------------*/
 /* Skill Area css
 ============================================================================================ */
+
 .myskill_area .skill_text {
   padding-bottom: 28px;
 }
@@ -661,6 +717,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 ============================================================================================ */
 /* Education Area css
 ============================================================================================ */
+
 .education_area {
   padding-bottom: 60px;
 }
@@ -798,6 +855,43 @@ body, p, h1, h2, h3, h4, h5, h6 {
   margin-left: 30px;
 }
 
+button.togglebutton{
+  display: block !important;
+  margin: 10px auto;
+  border-radius: 0 !important;
+  position: relative;
+  background: #ffc742!important;
+  border: none!important;
+  color: #fff!important;
+
+}
+
+button.togglebutton:hover{
+  background:#fff!important;
+  color:#ffc742!important;
+}
+button.togglebutton:before,button.togglebutton:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ffc742;
+  transition:400ms ease all;
+}
+button.togglebutton:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button.togglebutton:hover:before,button.togglebutton:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
 .education_area .education_inner_area .education_item #show ,
 .education_area .education_inner_area .education_item #show2,
 .education_area .education_inner_area .education_item #show3,
@@ -809,11 +903,14 @@ body, p, h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   background-color: azure;
   width: 50px;
+  margin: 10px auto;
 }
 
 .education_area .education_inner_area .education_item .row {
-  display: flex;
-  justify-content: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  overflow: scroll;
+  height: 200px;
 }
 
 .education_area .modal .close,
@@ -825,16 +922,14 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .education_inner_area .column {
-  float: left;
-  width: 45%;
-  margin: 5px;
+  /*width: 70%;*/
+  margin: 0 auto;
   overflow: hidden;
   border: 2px solid #fff;
+  position: relative;
+  text-align: center;
+  height: 200%;
 
-}
-
-.education_inner_area .column:hover{
-  border: 2px solid #747e8e;
 }
 
 .education_inner_area .column img:hover{
@@ -851,7 +946,9 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .education_inner_area .column img {
   transition: all .5s ease;
-  height: 200px;
+  /*padding: 0 10px!important;*/
+  width: 60%!important;
+  /*height: 200px;*/
 }
 
 .education_area .container {
@@ -862,14 +959,11 @@ body, p, h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-
-
-
-
 /* End Education Area css
 ============================================================================================ */
 /* Service Area css
 ============================================================================================ */
+
 .service_area {
   background: #fec608;
   padding: 0 50px 60px 50px;
@@ -929,6 +1023,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /*----------------------------------------------------*/
 /* Portfolio css
 ============================================================================================ */
+
 .portfolio_area .porfolio_menu {
   text-align: center;
 }
@@ -1007,7 +1102,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .portfolio_area .portfolio_list_inner div:nth-child(3),
 .portfolio_area .portfolio_list_inner div:nth-child(4),
-.portfolio_area .portfolio_list_inner .portfolio_item .portfolio_title #coming-soon {
+.portfolio_area .portfolio_list_inner .portfolio_item .portfolio_title .coming-soon {
   cursor: not-allowed;
 }
 
@@ -1081,10 +1176,12 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /*----------------------------------------------------*/
 /* News area css
 ============================================================================================ */
+
 .twitter_area {
   background: #fff;
   padding: 0 15px;
   min-height: 420px;
+  padding-bottom: 30px;
 }
 
 .twitter_area ul {
@@ -1111,6 +1208,11 @@ body, p, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0 ;
 }
 
+.twitter_area img {
+  height: 350px;
+  width: 100%;
+}
+
 .w_title {
   padding: 28px 0 20px 0 ;
 }
@@ -1132,12 +1234,62 @@ body, p, h1, h2, h3, h4, h5, h6 {
   color: #0084b4;
 }
 
+
+.progressBar {
+  /*margin-left: 100px;*/
+  width: 190px;
+  height: 22px;
+  display: inline-block;
+}
+
+.default {
+  border-radius: 4px;
+  background: #FFF;
+  border: 1px solid #AAA;
+  /*overflow: hidden;*/
+}
+
+.progressBar div {
+  height: 100%;
+  color: #fff;
+  text-align: right;
+  font-size: 12px;
+  line-height: 22px;
+  width: 170px
+}
+
+.lang {
+  display: inline-block;
+  margin: 13.5px 10px;
+  font-size: 23px;
+}
+
+.default div {
+  background-color: #1a82f7;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0099FF), to(#1a82f7));
+  background: -webkit-linear-gradient(top, #0099FF, #1a82f7);
+  background: -moz-linear-gradient(top, #0099FF, #1a82f7);
+  background: -ms-linear-gradient(top, #0099FF, #1a82f7);
+  background: -o-linear-gradient(top, #0099FF, #1a82f7);
+}
+
+.wrapper {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.wrapper span {
+  margin-left: 40px;
+  float: left;
+}
+
 .instagram_area {
   background: #fff;
   padding: 0 15px;
   overflow: hidden;
   clear: both;
   min-height: 420px;
+  padding-bottom: 30px;
 }
 
 .instagram_area .w_title h3 i {
@@ -1175,7 +1327,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .blog_slider_area {
   background: #fff;
-  padding: 0 15px;
+  padding:0 15px 30px 15px;
   position: relative;
   min-height: 420px;
 }
@@ -1399,9 +1551,160 @@ body, p, h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
 }
 
-.mapBox {
-  height: 220px;
-  margin-top: 60px !important;
+.column {
+  float: left;
+  /*width: 120px;*/
+  /*height: 130px;*/
+  margin: 10px 5px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 900px;
+  overflow: paged-x-controls;
+  margin: 0 auto;
+  /*background-color: black;*/
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 990;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.modal > img {
+  cursor: pointer;
+  position: absolute;
+  top: 110px;
+  right: 40px;
+  z-index: 9999;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #c1b4a1cf;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  border: 55px solid #22222240;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+  height: 80%;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -90px;
+  color: #4f5a5a;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8)!important;
+  color: #ccc;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.column img.demo,
+.mySlides img{
+  height: 100%;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #4f5a5a;
+  padding: 10px 16px;
+  color: white;
+  font-size: 18px;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.demo:hover {
+  opacity: 1;
+}
+
+.active-img {
+  border: 1px solid #4f5a5a;
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* End News area css
@@ -1431,16 +1734,25 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .envalab-style-switch .switched-options .styles li {
-  width: calc(98% / 4);
+  width:33%;
   float: left;
 }
 
 .envalab-style-switch .switched-options .styles li a {
   height: 35px;
   display: block;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 5px;
   background: #fec608;
+}
+
+.envalab-style-switch .switched-options .styles li a:hover {
+  top: -10px;
+  box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
+
+  -webkit-transform: rotateX(20deg);
+  -moz-transform: rotateX(20deg);
+  -ms-transform: rotateX(20deg);
+  transform: rotateX(20deg);
 }
 
 .envalab-style-switch .switched-options .styles li:nth-child(2) a {
@@ -1626,44 +1938,131 @@ body, p, h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-.modal {
-  position: fixed;
-  top: 50px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  outline: 0;
+.mapBox {
+  height: 220px;
+  margin-top: 60px !important;
 }
 
 
-/*.flipInY {*/
-  /*-webkit-backface-visibility: visible !important;*/
-  /*backface-visibility: visible !important;*/
-  /*-webkit-animation-name: flipInY;*/
-  /*animation-name: flipInY;*/
-  /*-webkit-animation-duration: 1s;*/
-  /*animation-duration: 1s;*/
-  /*-webkit-animation-fill-mode: both;*/
-  /*animation-fill-mode: both;*/
+
+/*---------------------------------------------------- */
+/*----------------------------------------------------*/
+/* Back to top Button area css
+============================================================================================ */
+
+#scroll {
+  position:fixed;
+  right:20px;
+  bottom:70px;
+  cursor:pointer;
+  width:47px;
+  height:47px;
+  background-color:#4f5a5a;
+  border-radius: 4px;
+  text-indent:-9999px;
+  display:none;
+  /*-webkit-border-radius:60px;*/
+  /*-moz-border-radius:60px;*/
+  /*border-radius:60px*/
+}
+#scroll span {
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-8px;
+  margin-top:-12px;
+  height:0;
+  width:0;
+  border:8px solid transparent;
+  border-bottom-color:#ffffff;
+}
+
+#scroll:hover {
+  background-color:#fff;
+  opacity:1;filter:"alpha(opacity=100)";
+  -ms-filter:"alpha(opacity=100)";
+  border: 2px solid #4f5a5a;
+}
+
+#scroll:hover span{
+  /*border: 8px solid #49c5b6;*/
+  border-bottom-color: #4f5a5a;
+  transform: translate(0px, -7px);
+  transition: 0.4s;
+}
+
+/*@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,latin-ext);*/
+/*body {*/
+    /*background: url("http://thecodeplayer.com/uploads/media/geometry.png");*/
+    /*font-family: 'Ubuntu', sans-serif;*/
 /*}*/
 
-.about_person_area .person_img:hover #profile{
-    -webkit-animation: vibrate-1 0.3s linear infinite both;
-    animation: vibrate-1 0.3s linear infinite both;
+/*a {*/
+    /*text-decoration: none;*/
+    /*color: #4f4f4f;*/
+/*}*/
+
+/*.button-container {*/
+    /*padding: 100px 0;*/
+    /*text-align: center;*/
+/*}*/
+
+.button {
+    display: inline-block;
+    width: 40px;
+    height:40px;
+    /*border: 1px solid #4f4f4f;*/
+    border-radius: 4px;
+    transition: all 3.2s ease-in;
+    position: relative;
+    overflow: hidden;
+}
+.button:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 1.0s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: 1;
+}
+.button:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 1.0s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: 1;
+}
+.button:hover {
+    color: #ffffff;
+    /*border: 1px solid #39bda7;*/
+}
+.button:hover:before {
+    top: -35%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button:hover:after {
+    top: -45%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 /* ----------------------------------------------
- * Generated by Animista on 2018-7-18 19:59:17
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
  * ----------------------------------------
- * animation vibrate-1
+ * Animation vibrate-1 are
  * ----------------------------------------
  */
 @-webkit-keyframes vibrate-1 {

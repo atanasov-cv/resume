@@ -20,6 +20,17 @@
 .education_area .education_inner_area .education_item::after {
 	background: #8447fe;
 }
+.education_area .education_inner_area button.togglebutton {
+	background: #732efe!important;
+}
+.education_area .education_inner_area button.togglebutton:hover {
+	color: #732efe!important;
+	background: white!important;
+}
+.education_area .education_inner_area button.togglebutton:before,
+.education_area .education_inner_area button.togglebutton:after {
+	background: #732efe;
+}
 .education_area .education_inner_area::before {
 	background: #8447fe;
 }

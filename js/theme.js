@@ -4,22 +4,24 @@
     /*----------------------------------------------------*/
     /*  Menu scroll js
     /*----------------------------------------------------*/
-    var nav_offset_top = $('.header_area').offset().top;
+    let headerArea = $('.header_area');
+    var nav_offset_top = headerArea.offset().top;
+
     function stickyHeader() {
-		if ($('.header_area').length) {
+		if (headerArea.length) {
 			var strickyScrollPos = nav_offset_top;
 			if($(window).scrollTop() > strickyScrollPos) {
-				$('.header_area').removeClass('fadeIn animated');
-				$('.header_area').addClass('stricky-fixed fadeInDown animated')
+				headerArea.removeClass('fadeIn animated');
+				headerArea.addClass('stricky-fixed fadeInDown animated')
 			}
 			else if($(window).scrollTop() <= strickyScrollPos) {
-				$('.header_area').removeClass('stricky-fixed fadeInDown animated');
-				$('.header_area').addClass('slideIn animated')
+				headerArea.removeClass('stricky-fixed fadeInDown animated');
+				headerArea.addClass('slideIn animated')
 			}
 		}
 	}
 
-    // instance of fuction while Window Scroll event
+    // instance of function while Window Scroll event
 	$(window).on('scroll', function () {
 		stickyHeader()
 	})
@@ -42,7 +44,7 @@
 
 
     /*----------------------------------------------------*/
-    /*  portfolio_isotope
+    /*  Portfolio_isotope
     /*----------------------------------------------------*/
     function our_gallery(){
         if ( $('.portfolio_area').length ){
@@ -74,7 +76,7 @@
 
 
     /*----------------------------------------------------*/
-    /*  Blog slider
+    /*  Certificate slider
     /*----------------------------------------------------*/
     function blog_slider(){
         if ( $('.blog_slider_inner').length ){
@@ -147,12 +149,14 @@
     bodyScrollAnimation();
 
 
-    // preloader js
+    /*----------------------------------------------------*/
+    /*  Preloader js
+    /*----------------------------------------------------*/
     $(window).load(function() { // makes sure the whole site is loaded
 		$('#preloader_spinner').fadeOut('slow'); // will first fade out the loading animation
 		$('#preloader').delay(250).fadeOut('slow'); // will fade out the white DIV that covers the website.
 		$('body').delay(4450).css({'overflow':'visible'})
-    })
+    });
 
 
-})(jQuery)
+})(jQuery);
