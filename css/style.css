@@ -45,12 +45,12 @@ body {
 }
 
 body.light_bg {
-  background: url(../img/Pattern_Light.png) repeat scroll center center;
+  background: url(../img/misc/Pattern_Light.png) repeat scroll center center;
   background-size: contain;
 }
 
 body.dark_bg {
-  background: url(../img/Pattern_Drak.png) repeat scroll center center;
+  background: url(../img/misc/Pattern_Drak.png) repeat scroll center center;
   background-size: contain;
 }
 
